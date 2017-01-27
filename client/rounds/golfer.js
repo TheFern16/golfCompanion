@@ -1,4 +1,4 @@
-angular.module('golfCompanion.scores', [])
+angular.module('golfCompanion.scores', ['golfCompanion.services'])
   .controller('GolferController', ($scope, Scores) => {
     $scope.data = {};
 

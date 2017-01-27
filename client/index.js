@@ -1,6 +1,7 @@
 angular.module('golfCompanion', [
   'golfCompanion.scores',
   'golfCompanion.services',
+  'ngRoute'
 ])
 
 .config(($routeProvider, $httpProvider) => {
