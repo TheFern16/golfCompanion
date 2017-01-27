@@ -1,11 +1,11 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var morgan = require('morgan');
-var _ = require('lodash');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const morgan = require('morgan');
+const _ = require('lodash');
 
-var app = express();
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
