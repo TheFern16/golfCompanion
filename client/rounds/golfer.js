@@ -1,18 +1,19 @@
 angular.module('golfCompanion.scores', [])
   .controller('golferController', ($scope, Scores) => {
-    $scope.scores = [];
+    $scope.data = {};
+    $scope.data.highScores = [];
 
-  $scope.getScores = () => {
-    Scores.getScores().then(score => {
-      $scope.scores = score;
+  var getScores = () => {
+    Scores.getScores().then(scores => {
+      $scope.data.scores = scores;
     });
   }
-  $scope.getScores();
+  getScores();
 
-  $scope.postScore = (val) => {
+  var postScore = (val) => {
     Scores.postScore(val).then(score => {
-      $scope.posted = score;
       $scope.getScores();
     });
   };
+
 });

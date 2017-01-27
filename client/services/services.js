@@ -13,6 +13,7 @@ angular.module('golfCompanion.services', [])
           return res.data;
         })
       },
+
       getScores: () => {
         return $http({
           method: 'GET',

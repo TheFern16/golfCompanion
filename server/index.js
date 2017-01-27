@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
+app.use(express.static(__dirname + '/../client'));
 
 mongoose.connect('mongodb://localhost/golfCompanion');
 mongoose.connection.once('open', (req, res, next) => {
 
-});
   app.models = require('./models/index');
 
   let routes = require('./routes');
@@ -26,4 +26,5 @@ mongoose.connection.once('open', (req, res, next) => {
 
   console.log('I am listening');
   app.listen(3000);
+});
 
