@@ -1,0 +1,12 @@
+<div class="golfer">
+  <div class="golfer"
+      ng-repeat="score in data.scores | filter:search | orderBy:'created_at'">
+    <div class="info">
+      <div class="name">
+        <span class="name">{{ score.name }}</span>Name
+      </div>
+      <div class="course">{{ score.course }}</div>
+      <div class="original">{{ score.score }}</div>
+    </div>
+  </div>
+  </div>

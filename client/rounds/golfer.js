@@ -1,7 +1,6 @@
 angular.module('golfCompanion.scores', [])
   .controller('golferController', ($scope, Scores) => {
     $scope.data = {};
-    $scope.data.highScores = [];
 
   var getScores = () => {
     Scores.getScores().then(scores => {
