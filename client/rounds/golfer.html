@@ -1,12 +1,9 @@
-<h3>test</h3>
 <div class="golfer">
   <div class="golfer" ng-repeat="score in data.scores">
     <div class="info">
-      <div class="name">
-        <span class="name">{{ score.name }}</span>Name
+      <div class="post">
+        <span class="name">name: {{ score.name }} course: {{ score.course }} score: {{ score.score }}</span>Name
       </div>
-      <div class="course">{{ score.course }}</div>
-      <div class="original">{{ score.score }}</div>
     </div>
   </div>
   </div>
