@@ -1,8 +1,13 @@
 <div class="golfer">
+  <form ng-submit>
+    <input class="input-box" type="text" ng-model="text" placeholder="enter your round here">
+    <input type="submit">
+  </form>
+
   <div class="golfer" ng-repeat="score in data.scores">
     <div class="info">
       <div class="post">
-        <p><span class="name">name: {{ score.name }} course: {{ score.course }} score: {{ score.score }}</span></p>
+        <p><span class="name">{{ score.name }} played at {{ score.course }} ~ score: {{ score.score }}</span></p>
       </div>
     </div>
   </div>

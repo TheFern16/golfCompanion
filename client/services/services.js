@@ -1,9 +1,13 @@
 angular.module('golfCompanion.services', [])
-  .factory('Scores', function ($http) {
+  .factory('Scores', function($http) {
     return {
 
-      postScore: (val) => {
-        let data = {val: val};
+      postScore: (name, course, score) => {
+        let data = {
+          name: name,
+          course: course,
+          score: score
+        };
         return $http({
           method: 'POST',
           url: '/golfer',
