@@ -1,5 +1,5 @@
 angular.module('golfCompanion.services', [])
-  .factory('Scores', ($http) => {
+  .factory('Scores', function ($http) {
     return {
 
       postScore: (val) => {

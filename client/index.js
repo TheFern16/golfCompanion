@@ -4,7 +4,7 @@ angular.module('golfCompanion', [
   'ngRoute'
 ])
 
-.config(($routeProvider, $httpProvider) => {
+.config( function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
       templateUrl: '/rounds/golfer.html',
