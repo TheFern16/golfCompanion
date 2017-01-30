@@ -1,26 +1,27 @@
 <div id="container" style="width:100%; height:400px;"></div>
-<script>$(function () {
+  <script>$(function () {
     const golferData = Highcharts.chart('container', {
         chart: {
-            type: 'areaspline'
+          type: 'areaspline'
         },
         title: {
-            text: 'Your Stats'
+          text: 'Your Stats'
         },
         xAxis: {
-            categories: ['Janurary']
+          categories: ['Janurary']
         },
         yAxis: {
-            title: {
-                text: 'Your Scores'
-            }
+          title: {
+            text: 'Your Scores'
+          }
         },
         series: [{
-            name: 'Joe Golfer',
-            data: [85, 88, 85, 83, 78, 79, 75, 80, 73, 74, 72]
+          name: 'Joe Golfer',
+          data: [85, 88, 85, 83, 78, 79, 75, 80, 73, 74, 72]
         }]
-    });
-})</script>
+      });
+    })
+  </script>
 
 <center>
   <div class="golfer">
