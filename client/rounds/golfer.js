@@ -12,9 +12,9 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
 
   $scope.postScore = (score) => {
     Scores.postScore(score).then((data) => {
-      $scope.postedScore = data;
-    })
+      $scope.result = data;
     console.log('invoked ======', $scope.getScores());
+    })
   }
 
 });
