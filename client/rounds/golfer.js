@@ -1,7 +1,8 @@
 angular.module('golfCompanion.scores', ['golfCompanion.services'])
   .controller('GolferController', function($scope, Scores) {
     $scope.data = {};
-    $scope.score = 0;
+    $scope.name = 'Joe Golfer';
+    $scope.score = 72;
     $scope.course = 'Rustic Canyon G.C.';
 
   $scope.getScores = () => {

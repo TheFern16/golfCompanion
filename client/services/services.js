@@ -4,7 +4,7 @@ angular.module('golfCompanion.services', [])
 
       postScore: (name, course, score) => {
         let data = {
-          name: 'Matt',
+          name: name,
           course: course,
           score: score
         };
