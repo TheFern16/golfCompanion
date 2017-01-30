@@ -12,6 +12,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
 
   $scope.postScore = (score) => {
     Scores.postScore(score).then((data) => {
+      $scope.inputConfirmed = "--- Your score has been posted."
       $scope.result = data;
     console.log('invoked ======', $scope.getScores());
     })

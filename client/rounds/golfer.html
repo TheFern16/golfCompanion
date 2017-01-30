@@ -3,14 +3,16 @@
   Enter your score:
   <input type="text" ng-model="score" name="score">
   <input type="submit" id="submit" value="Submit">
-  {{ result }}
+  <div>
+    <span>{{ result.score }} {{ inputConfirmed }} </span>
+  </div>
 </form>
 
 
 <div class="golfer" ng-repeat="score in data.scores">
   <div class="info">
     <div class="post">
-      <p><span class="name">{{ score.name }} played at {{ score.course }} ~ score: {{ score.score }}</span></p>
+      <p><span class="name">{{ score.score }} --- {{ score.name }} @ {{ score.course }}</span></p>
     </div>
   </div>
 </div>
