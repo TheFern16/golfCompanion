@@ -1,14 +1,15 @@
 <div class="golfer">
-  <form ng-submit="postScore(score)">
-    <input type="score" ng-model="score" name="score">
-    <input type="submit" id="submit" value="Submit">
-  </form>
+<form ng-submit="postScore(score)" ng-controller="GolferController">
+  Enter your score:
+  <input type="text" ng-model="score" name="score">
+  <input type="submit" id="submit" value="Submit">
+</form>
 
-  <div class="golfer" ng-repeat="score in data.scores">
-    <div class="info">
-      <div class="post">
-        <p><span class="name">{{ score.name }} played at {{ score.course }} ~ score: {{ score.score }}</span></p>
-      </div>
+<div class="golfer" ng-repeat="score in data.scores">
+  <div class="info">
+    <div class="post">
+      <p><span class="name">{{ score.name }} played at {{ score.course }} ~ score: {{ score.score }}</span></p>
     </div>
   </div>
-  </div>
+</div>
+</div>

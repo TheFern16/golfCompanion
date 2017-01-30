@@ -4,6 +4,8 @@ angular.module('golfCompanion.services', [])
 
       postScore: (score) => {
         let data = {
+          name: 'Matt',
+          course: 'Rustic Canyon G.C.',
           score: score
         };
         return $http({

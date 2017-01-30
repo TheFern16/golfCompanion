@@ -3,20 +3,17 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
     $scope.data = {};
     $scope.score = 0;
 
-  var getScores = () => {
+  $scope.getScores = () => {
     Scores.getScores().then(scores => {
       $scope.data.scores = scores;
     });
   }
-  getScores();
+  $scope.getScores();
 
-  var postScore = (val) => {
+  $scope.postScore = (score) => {
     console.log('here');
-    Scores.postScore(val).then(() => {
-      if ($scope.score) {
-        $scope.data.scores.push(this.score);
-        $scope.score = 0;
-      }
+    Scores.postScore(score).then((data) => {
+      $scope.feedback = data;
       $scope.getScores();
     });
   };
@@ -37,9 +34,4 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
 //     };
 //   }]);
 // </script>
-// <form ng-submit="submit()" ng-controller="ExampleController">
-//   Enter text and hit enter:
-//   <input type="text" ng-model="text" name="text" />
-//   <input type="submit" id="submit" value="Submit" />
-//   <pre>list={{list}}</pre>
-// </form>
+
