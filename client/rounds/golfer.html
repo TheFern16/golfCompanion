@@ -5,11 +5,14 @@
   <input type="submit" id="submit" value="Submit">
 </form>
 
+
 <div class="golfer" ng-repeat="score in data.scores">
   <div class="info">
     <div class="post">
+
       <p><span class="name">{{ score.name }} played at {{ score.course }} ~ score: {{ score.score }}</span></p>
     </div>
   </div>
 </div>
 </div>
+  <!-- <div><p><span class="name">{{ postedScore.name }} played at {{ postedScore.course }} ~score: {{ postedScore.score }}</span></p></div> -->
