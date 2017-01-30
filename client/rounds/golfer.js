@@ -2,6 +2,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
   .controller('GolferController', function($scope, Scores) {
     $scope.data = {};
     $scope.score = 0;
+    $scope.course = 'Rustic Canyon G.C.';
 
   $scope.getScores = () => {
     Scores.getScores().then(scores => {
@@ -10,8 +11,8 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
   }
   console.log('invoked -----', $scope.getScores());
 
-  $scope.postScore = (score) => {
-    Scores.postScore(score).then((data) => {
+  $scope.postScore = (name, course, score) => {
+    Scores.postScore(name, course, score).then((data) => {
       $scope.inputConfirmed = "--- Your score has been posted."
       $scope.result = data;
     console.log('invoked ======', $scope.getScores());

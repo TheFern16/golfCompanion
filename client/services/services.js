@@ -2,10 +2,10 @@ angular.module('golfCompanion.services', [])
   .factory('Scores', function($http) {
     return {
 
-      postScore: (score) => {
+      postScore: (name, course, score) => {
         let data = {
           name: 'Matt',
-          course: 'Rustic Canyon G.C.',
+          course: course,
           score: score
         };
         return $http({
