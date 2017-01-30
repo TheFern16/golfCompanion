@@ -2,15 +2,13 @@ angular.module('golfCompanion.services', [])
   .factory('Scores', function($http) {
     return {
 
-      postScore: (name, course, score) => {
+      postScore: (score) => {
         let data = {
-          name: name,
-          course: course,
           score: score
         };
         return $http({
           method: 'POST',
-          url: '/golfer',
+          url: '/api/golfer',
           data: data
         })
         .then(res => {
@@ -21,7 +19,7 @@ angular.module('golfCompanion.services', [])
       getScores: () => {
         return $http({
           method: 'GET',
-          url: '/golfer'
+          url: '/api/golfer'
         })
         .then(res => {
           return res.data;

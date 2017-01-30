@@ -1,7 +1,7 @@
 <div class="golfer">
-  <form ng-submit>
-    <input class="input-box" type="text" ng-model="text" placeholder="enter your round here">
-    <input type="submit">
+  <form ng-submit="postScore(score)">
+    <input type="score" ng-model="score" name="score">
+    <input type="submit" id="submit" value="Submit">
   </form>
 
   <div class="golfer" ng-repeat="score in data.scores">
