@@ -1,5 +1,5 @@
-angular.module('golfCompanion.scores', ['golfCompanion.services'])
-  .controller('GolferController', function($scope, Scores) {
+angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
+  .controller('GolferController', function($scope, Scores, _) {
     $scope.data = {};
     $scope.name = 'Joe Golfer';
     $scope.score = 72;
