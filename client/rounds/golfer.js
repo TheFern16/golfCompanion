@@ -9,10 +9,6 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
   $scope.getScores = () => {
     Scores.getScores().then(scores => {
       $scope.data.scores = scores;
-      _.each(scores, (element, key) => {
-        console.log('value', element.score);
-        $scope.mappedArray.push(element.score);
-      })
     });
   }
   $scope.getScores();
@@ -25,8 +21,9 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
   }
 
 
-  $scope.analysis = $(() => {
+  $scope.analysis =
 
+  $(() => {
     const golferData = Highcharts.chart('container', {
       chart: {
         type: 'areaspline'
@@ -44,8 +41,23 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       },
       series: [{
         name: 'Joe Golfer',
-        data: $scope.mappedArray
+        data: (() => {
+          let data = [];
+          Scores.getScores().then(scores => {
+            $scope.data.scores = scores;
+              _.each(scores, (element) => {
+                data.push(element.score);
+              })
+            });
+            return data;
+        })
       }]
     });
-  })
+  });
 });
+
+
+
+
+
+
