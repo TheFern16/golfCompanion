@@ -26,6 +26,13 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       chart: {
         type: 'areaspline'
       },
+      events: {
+        load: function () {
+          setInterval(() => {
+            console.log(this.series[0].data())
+          }, 1000);
+        }
+      },
       title: {
         text: 'Your Stats'
       },
@@ -44,10 +51,10 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
           let data = [];
           Scores.getScores().then(scores => {
               _.each(scores, (element) => {
-                console.log(element.score);
                 data.push(element.score);
               })
             });
+          console.log(data);
           return data;
         }())
       }]
