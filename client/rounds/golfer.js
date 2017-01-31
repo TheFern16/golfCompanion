@@ -21,9 +21,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
   }
 
 
-  $scope.analysis =
-
-  $(() => {
+  $scope.analysis = $(() => {
     const golferData = Highcharts.chart('container', {
       chart: {
         type: 'areaspline'
@@ -50,10 +48,16 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
               })
             });
             return data;
-        })
+        })()
+
       }]
     });
   });
+
+
+
+
+
 });
 
 
