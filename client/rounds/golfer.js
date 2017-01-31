@@ -4,7 +4,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
     $scope.name = 'Joe Golfer';
     $scope.score = 72;
     $scope.course = 'Rustic Canyon G.C.';
-    $scope.scores = [85, 88, 85, 83, 78, 79, 75, 80, 73, 74, 72]
+    $scope.array = [];
 
   $scope.getScores = () => {
     Scores.getScores().then(scores => {
@@ -19,8 +19,8 @@ angular.module('golfCompanion.scores', ['golfCompanion.services'])
     })
   }
 
-  $scope.analysis =
-  $(function () {
+  $scope.analysis = $(() => {
+    $scope.getScores()
     const golferData = Highcharts.chart('container', {
       chart: {
         type: 'areaspline'
