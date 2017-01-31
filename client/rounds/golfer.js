@@ -4,13 +4,18 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     $scope.name = 'Joe Golfer';
     $scope.score = 72;
     $scope.course = 'Rustic Canyon G.C.';
-    $scope.array = [];
+    $scope.mappedArray = []
 
   $scope.getScores = () => {
     Scores.getScores().then(scores => {
       $scope.data.scores = scores;
+      _.each(scores, (element, key) => {
+        console.log('value', element.score);
+        $scope.mappedArray.push(element.score);
+      })
     });
   }
+  $scope.getScores();
 
   $scope.postScore = (name, course, score) => {
     Scores.postScore(name, course, score).then((data) => {
@@ -19,8 +24,9 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     })
   }
 
+
   $scope.analysis = $(() => {
-    $scope.getScores()
+
     const golferData = Highcharts.chart('container', {
       chart: {
         type: 'areaspline'
@@ -38,7 +44,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       },
       series: [{
         name: 'Joe Golfer',
-        data: $scope.scores
+        data: $scope.mappedArray
       }]
     });
   })
