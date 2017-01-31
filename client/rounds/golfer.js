@@ -39,25 +39,20 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       },
       series: [{
         name: 'Joe Golfer',
-        data: (() => {
+        data: (
+        function() {
           let data = [];
           Scores.getScores().then(scores => {
-            $scope.data.scores = scores;
               _.each(scores, (element) => {
+                console.log(element.score);
                 data.push(element.score);
               })
             });
-            return data;
-        })()
-
+          return data;
+        }())
       }]
     });
   });
-
-
-
-
-
 });
 
 
