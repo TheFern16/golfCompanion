@@ -25,6 +25,23 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       });
     };
 
-
-
+   $scope.piechart = $(document).ready(() => {
+    let options = {
+      chart: {
+        renderTo: 'container',
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: 'Here are the courses you have played'
+      },
+      series: [{}]
+    };
+    $.getJSON('/api/golfer', (data) => {
+     options.series[0].data = data.map(v => v.course);
+      var chart = new Highcharts.Chart(options);
+    });
+  })
 });

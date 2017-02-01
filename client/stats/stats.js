@@ -1,17 +1,20 @@
 angular.module('golfCompanion.stats', [])
 
 .controller('StatsController', function($scope) {
-  $scope.analysis = $(document).ready(function() {
-    var options = {
+  $scope.areaspline = $(document).ready(() => {
+    let options = {
       chart: {
         renderTo: 'container',
         type: 'areaspline'
       },
       title: {
-        text: 'Your stats'
+        text: 'Snapshot: Your Scores'
       },
       yAxis: {
         tickPixelInterval: 1,
+        title: {
+          text: 'Score'
+        }
       },
       xAxis: {
         categories: []
@@ -19,11 +22,10 @@ angular.module('golfCompanion.stats', [])
       series: [{}]
     };
 
-    $.getJSON('/api/golfer', function(data) {
+    $.getJSON('/api/golfer', (data) => {
         options.series[0].data = data.map(v => v.score);
         options.series[0].name = data[0].name;
         var chart = new Highcharts.Chart(options);
     });
   });
-
 })
