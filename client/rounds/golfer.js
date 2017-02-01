@@ -43,7 +43,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       };
 
       $.getJSON('/api/golfer', function(data) {
-          options.series[0].data = data;
+          options.series[0].data = data.map(v => v.score);
           var chart = new Highcharts.Chart(options);
       });
     });
