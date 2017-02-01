@@ -1,6 +1,7 @@
 angular.module('golfCompanion.stats', [])
 
 .controller('StatsController', function($scope) {
+
   $scope.areaspline = $(document).ready(() => {
     let options = {
       chart: {
@@ -25,7 +26,7 @@ angular.module('golfCompanion.stats', [])
     $.getJSON('/api/golfer', (data) => {
         options.series[0].data = data.map(v => v.score);
         options.series[0].name = data[0].name;
-        var chart = new Highcharts.Chart(options);
+        let chart = new Highcharts.Chart(options);
     });
   });
-})
+});

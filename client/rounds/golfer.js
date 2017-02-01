@@ -29,19 +29,36 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     let options = {
       chart: {
         renderTo: 'container',
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
+        type: 'collumn'
       },
       title: {
         text: 'Here are the courses you have played'
       },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'How many times you have played each course.'
+        }
+      },
+      plotOptions: {
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0
+        }
+      },
       series: [{}]
     };
+
     $.getJSON('/api/golfer', (data) => {
-     options.series[0].data = data.map(v => v.course);
-      var chart = new Highcharts.Chart(options);
+      const mappedArray = data.map(v => v.course)
+        .reduce((result, element) => {
+          result[element] = result[element] + 1 | 1
+          return result;
+        }, {});
+      console.log(mappedArray);
+      // options.series[0].data = data.map(v => v.course);
+      // let chart = new Highcharts.Chart(options);
     });
-  })
+
+  });
 });
