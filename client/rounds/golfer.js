@@ -61,11 +61,8 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
         }
       });
 
-      // console.log(createArray)
-
-      // options.series[0].data = data.map(v => v.course);
       let chart = new Highcharts.Chart(options);
-    });
 
+    });
   });
 });
