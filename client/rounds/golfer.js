@@ -22,22 +22,19 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     };
 
     $scope.analysis = $(document).ready(function() {
-
       var options = {
         chart: {
-            renderTo: 'container',
-            type: 'areaspline'
+          renderTo: 'container',
+          type: 'areaspline'
         },
         title: {
           text: 'Your stats'
         },
         yAxis: {
-          title: {
-            text: 'Scores'
-          }
+          tickPixelInterval: 1,
         },
         xAxis: {
-          categories: ['January']
+          categories: []
         },
         series: [{}]
       };
@@ -59,47 +56,4 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     $('#auto').click(function () {
       chart.setSize(null);
     });
-})
-
-
-
-
-
-
-// $scope.analysis = $(document).ready(() => {
-//     const golferData = Highcharts.chart('container', {
-//       chart: {
-//         type: 'areaspline'
-//       },
-//       title: {
-//         text: 'Your Stats'
-//       },
-//       xAxis: {
-//         categories: ['Janurary']
-//       },
-//       yAxis: {
-//         title: {
-//           text: 'Your Scores'
-//         }
-//       },
-//       series: [{
-//         name: 'Joe Golfer',
-//         data: (function() {
-//           let data = [];
-//           Scores.getScores().then(scores => {
-//             // console.log(Array.isArray(scores))
-//             // console.log('scores', scores)
-//             scores.map((element) => {
-//               console.log(element)
-//               return element.score
-//             })
-//             _.each(scores, (element) => {
-//               data.push(element.score);
-//             });
-//           });
-//           console.log(JSON.parse(JSON.stringify(data)));
-//           return data;
-//         }())
-//       }]
-//     });
-//   });
+});
