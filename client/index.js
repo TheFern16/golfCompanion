@@ -12,4 +12,8 @@ angular.module('golfCompanion', [
       templateUrl: '/rounds/golfer.html',
       controller: 'GolferController'
     })
+    .when('/stats', {
+      templateUrl: '/stats/stats.html',
+      controller: 'StatsController'
+    })
 });
