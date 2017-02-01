@@ -29,7 +29,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     let options = {
       chart: {
         renderTo: 'container',
-        type: 'collumn'
+        type: 'column'
       },
       title: {
         text: 'Here are the courses you have played'
@@ -54,17 +54,17 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
           result[element] = result[element] + 1 | 1
           return result;
         }, {});
-      let createArray = _.map(createObject, (value, key) => {
+      options.series = _.map(createObject, (value, key) => {
         return {
-          name: key,
+          top: key,
           data: [value]
         }
       });
 
-      console.log(createArray)
+      // console.log(createArray)
 
       // options.series[0].data = data.map(v => v.course);
-      // let chart = new Highcharts.Chart(options);
+      let chart = new Highcharts.Chart(options);
     });
 
   });
