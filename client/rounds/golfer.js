@@ -50,12 +50,19 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     };
 
     $.getJSON('/api/golfer', (data) => {
-      const mappedArray = data.map(v => v.course)
-        .reduce((result, element) => {
+      let createObject = data.map(v => v.course).reduce((result, element) => {
           result[element] = result[element] + 1 | 1
           return result;
         }, {});
-      console.log(mappedArray);
+      let createArray = _.map(createObject, (value, key) => {
+        return {
+          name: key,
+          data: [value]
+        }
+      });
+
+      console.log(createArray)
+
       // options.series[0].data = data.map(v => v.course);
       // let chart = new Highcharts.Chart(options);
     });
