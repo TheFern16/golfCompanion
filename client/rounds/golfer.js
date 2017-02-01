@@ -31,7 +31,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
         series: [{}]
       };
 
-      $.getJSON('data.json', function(data) {
+      $.getJSON('/api/golfer', function(data) {
           options.series[0].data = data;
           var chart = new Highcharts.Chart(options);
       });
