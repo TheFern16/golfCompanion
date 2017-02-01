@@ -37,7 +37,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       yAxis: {
         min: 0,
         title: {
-          text: 'How many times you have played each course.'
+          text: 'Total times played at each course.'
         }
       },
       plotOptions: {
@@ -56,7 +56,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
         }, {});
       options.series = _.map(createObject, (value, key) => {
         return {
-          top: key,
+          name: key,
           data: [value]
         }
       });
