@@ -26,7 +26,18 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       var options = {
         chart: {
             renderTo: 'container',
-            type: 'spline'
+            type: 'areaspline'
+        },
+        title: {
+          text: 'Your stats'
+        },
+        yAxis: {
+          title: {
+            text: 'Scores'
+          }
+        },
+        xAxis: {
+          categories: ['January']
         },
         series: [{}]
       };
