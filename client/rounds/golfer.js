@@ -41,6 +41,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
 
       $.getJSON('/api/golfer', function(data) {
           options.series[0].data = data.map(v => v.score);
+          options.series[0].name = data[0].name;
           var chart = new Highcharts.Chart(options);
       });
     });
