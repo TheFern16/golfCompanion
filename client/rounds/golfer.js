@@ -46,15 +46,4 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       });
     });
 
-    $('#small').click(function () {
-      chart.setSize(400);
-    });
-
-    $('#large').click(function () {
-      chart.setSize(800);
-    });
-
-    $('#auto').click(function () {
-      chart.setSize(null);
-    });
 });
