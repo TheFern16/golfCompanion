@@ -32,7 +32,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
         type: 'column'
       },
       title: {
-        text: 'Courses'
+        text: 'Here are the courses you have played'
       },
       yAxis: {
         min: 0,
