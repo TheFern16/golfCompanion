@@ -1,13 +1,13 @@
 angular.module('golfCompanion', [
   'golfCompanion.scores',
   'golfCompanion.services',
-
+  'golfCompanion.weather',
   'golfCompanion.stats',
   'underscore',
   'ngRoute'
 ])
 
-.config( function($routeProvider, $httpProvider) {
+.config(function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
       templateUrl: '/rounds/golfer.html',
