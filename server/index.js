@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const routes = require('./routes');
 const _ = require('lodash');
+
 const app = express();
 
 // parsing into JSON
@@ -16,17 +18,13 @@ app.use(express.static(__dirname + '/../client'));
 
 // connect to the mongoose schema
 mongoose.connect('mongodb://localhost/golfCompanion');
-mongoose.connection.once('open', (req, res, next) => {
 
-  app.models = require('./models/index');
-
-  let routes = require('./routes');
-  _.each(routes, (controller, route) => {
-    app.use(route, controller(app, route));
-  });
-
-
-  console.log('3000... I am listening');
-  app.listen(3000);
+// serves the golfer model into the below function and returns the methods
+app.models = require('./models/index');
+_.each(routes, (controller, route) => {
+  app.use(route, controller(app, route));
 });
+
+console.log('3000... I am listening');
+app.listen(3000);
 
