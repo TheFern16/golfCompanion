@@ -1,5 +1,5 @@
-angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
-  .controller('GolferController', function golferController($scope, Scores, _, $location) {
+angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore', 'golfCompanion.weather'])
+  .controller('GolferController', function golferController($scope, Scores, _, $location, Weather) {
     $scope.data = {};
     $scope.name = 'Joe Golfer';
     $scope.score = 72;
@@ -54,6 +54,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
           result[element] = result[element] + 1 | 1
           return result;
         }, {});
+
       options.series = _.map(createObject, (value, key) => {
         return {
           name: key,
