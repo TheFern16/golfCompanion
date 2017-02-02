@@ -1,4 +1,4 @@
-var restful = require('node-restful');
+const restful = require('node-restful');
 
 module.exports = (app, route) => {
 
