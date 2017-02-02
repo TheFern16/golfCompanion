@@ -1,7 +1,7 @@
 angular.module('golfCompanion', [
   'golfCompanion.scores',
   'golfCompanion.services',
-  'golfCompanion.weather',
+
   'golfCompanion.stats',
   'underscore',
   'ngRoute'
