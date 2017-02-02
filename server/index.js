@@ -2,9 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const morgan = require('morgan');
 const _ = require('lodash');
-
 const app = express();
 
 // parsing into JSON
