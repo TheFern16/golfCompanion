@@ -50,7 +50,8 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     };
 
     $.getJSON('/api/golfer', (data) => {
-      let createObject = data.map(v => v.course).reduce((result, element) => {
+      let createObject = data.map(v => v.course)
+        .reduce((result, element) => {
           result[element] = result[element] + 1 | 1
           return result;
         }, {});
