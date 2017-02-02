@@ -26,16 +26,6 @@ angular.module('golfCompanion.services', [])
         .then(res => {
           return res.data;
         })
-      },
-
-      getWeather: () => {
-        return $http({
-          method: 'GET',
-          url: '/api/weather'
-        })
-        .then(res => {
-          return res.data;
-        })
       }
     }
   });
