@@ -53,7 +53,7 @@ table {
 
 body {
   background: #D7D7D7;
-  color: #888;
+  color: #000000;
   font: 300 16px/22px "Lato", "Opens Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -104,7 +104,7 @@ strong {
 }
 
 .logo {
-  border-top: 4px solid #648880;
+  border-top: 4px solid #FFFFD5;
   float: left;
   font-size: 48px;
   font-weight: 100;
