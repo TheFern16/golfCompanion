@@ -9,7 +9,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
 </head>
   <body>
-    <header><h1>Golf Companion</h1></header>
+    <header>
+      <div id="title" ng-controller="GolferController">
+        <h1>Golf Companion</h1>
+        <div align="right">
+          <strong>Today:</strong> {{ weatherData.data.data.day }} {{ weatherData.data.data.date }} {{ weatherData.data.data.temperature }} degrees fahrenheit.
+        </div>
+    </header>
 
     <center><div id="nav" ng-controller="GolferController">
       <span ng-click="changeView('/')"><strong>Post</strong></span>

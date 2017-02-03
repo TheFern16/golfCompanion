@@ -42,5 +42,4 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
         });
       });
     };
-  $scope.getWeather();
 });
