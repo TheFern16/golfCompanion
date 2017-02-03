@@ -163,9 +163,31 @@ h1, h3, h4, h5, p {
   margin-bottom: 22px;
 }
 
-.pageView {
+.pageview {
   padding-right: 30px;
   padding-left: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
+.golfer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
 
+.score {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}

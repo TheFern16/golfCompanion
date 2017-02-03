@@ -7,7 +7,10 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
       chart: {
         backgroundColor: '#FFFFD5',
         renderTo: 'container',
-        type: 'areaspline'
+        type: 'areaspline',
+        style: {
+          fontFamily: 'lato'
+        }
       },
       title: {
         text: 'Snapshot: Your Scores'

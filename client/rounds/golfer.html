@@ -15,10 +15,10 @@
 </center>
 
 <center>
-  <div class="golfer" ng-repeat="score in data.scores | orderBy:'created_at':true">
+  <div ng-repeat="score in data.scores | orderBy:'created_at':true">
     <div class="info">
       <div class="post">
-        <p><span class="name">{{ score.score }} --- {{ score.name }} @ {{ score.course }}</span></p>
+        <p><span class="score">{{ score.score }} --- {{ score.name }} @ {{ score.course }}</span></p>
       </div>
     </div>
   </div>

@@ -53,7 +53,10 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       chart: {
         backgroundColor: '#FFFFD5',
         renderTo: 'container',
-        type: 'column'
+        type: 'column',
+        style: {
+          fontFamily: 'lato'
+        }
       },
       title: {
         text: 'Here are the courses you have played'
