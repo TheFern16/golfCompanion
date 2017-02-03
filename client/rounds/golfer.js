@@ -16,17 +16,17 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
         $scope.data.scores = scores;
       });
     };
+        // let url = "https://cors-anywhere.herokuapp.com/https://www.amdoren.com/api/weather.php?api_key=K4yP7LzhASPgADmyPJkDkq3P6DAjLH&lat="+lat+"&lon="+lon+"";
 
     $scope.getWeather = () => {
       navigator.geolocation.getCurrentPosition((position) => {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
-        let url = "https://www.amdoren.com/api/weather.php?api_key=K4yP7LzhASPgADmyPJkDkq3P6DAjLH&lat="+lat+"&lon="+lon+"";
-
+        let url = "https://cors-anywhere.herokuapp.com/http://weathers.co/api.php?city=New+York"
       $http.get(url)
         .then((data) => {
-          $scope.weatherData = $sce.trustAsResourceUrl(data);
-          console.log(data);
+          $scope.weatherData = data;
+          console.log($scope.weatherData);
         });
       });
     };
