@@ -9,19 +9,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
   <link rel="stylesheet" href="./assets/stylesheets/main.css"></script>
 </head>
-  <body>
-    <header>
-      <div id="title" ng-controller="GolferController">
-        <h1>Golf Companion</h1>
 
-        <div align="left" ng-repeat="element in hardCoded.forecast" class="fiveDayWeather">
-          {{ element.avg_f }} | {{ element.summary }} | {{ element.date }}
-        </div>
 
-        <div align="right">
-          <strong>Today:</strong> {{ weatherData.data.data.day }} | {{ weatherData.data.data.temperature }} degrees fahrenheit.
-        </div>
-    </header>
+
+<body>
+  <header class="primary-header container group"  ng-controller="GolferController">
+      <h1 class="logo">
+        Golf Companion
+      </h1>
+      <h3 class="tagline">{{ weatherData.data.data.day }} | {{ weatherData.data.data.temperature }} degrees fahrenheit.</h3>
+    <nav class = "nav primary-nav">
+      <ul ng-repeat="element in hardCoded.forecast">
+        <li>{{ element.avg_f }} | {{ element.summary }} | {{ element.date }}</li><!-- -->
+      </ul>
+    </nav>
+  </header>
 
     <center><div id="nav" ng-controller="GolferController">
       <span ng-click="changeView('/')"><strong>Post</strong></span>

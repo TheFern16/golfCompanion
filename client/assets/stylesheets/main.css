@@ -51,6 +51,78 @@ table {
 
 */
 
+body {
+  background: #D7D7D7;
+  color: #888;
+  font: 300 16px/22px "Lato", "Opens Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.container,
+.grid {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.tagline {
+  margin: 66px 0 22px 00;
+  text-align: right;
+}
+
+.primary-nav {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.logo {
+  border-top: 4px solid #648880;
+  float: left;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
+  text-transform: uppercase;
+}
+
+.primary-header a,
+.primary-footer a {
+  color: #fff;
+}
+
+.primary-header a: hover,
+.primary-footer a: hover {
+  color: #648880;
+}
 
 
 .fiveDayWeather {
@@ -60,6 +132,36 @@ table {
     width: 33%;
 }
 
+.primary-footer small {
+  float: left;
+  font-weight: 400;
+}
+
+.primary-footer {
+  padding-bottom: 44px;
+  padding-top: 44px;
+  color: #648880;
+  font-size: 14px;
+}
+
+.nav {
+  text-align: right;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+
+.nav li: last-child {
+  margin-right: 0;
+}
+
+
+h1, h3, h4, h5, p {
+  margin-bottom: 22px;
+}
 
 
 
