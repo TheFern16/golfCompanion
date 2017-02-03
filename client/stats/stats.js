@@ -3,6 +3,8 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
 .controller('StatsController', function($scope, $http) {
 
   $scope.areaspline = $(document).ready(() => {
+    $scope.averageScore
+
     let options = {
       chart: {
         backgroundColor: '#FFFFD5',
@@ -27,9 +29,14 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
     };
 
     $.getJSON('/api/golfer', (data) => {
-        options.series[0].data = data.map(v => v.score);
-        options.series[0].name = data[0].name;
-        let chart = new Highcharts.Chart(options);
+      let updateScore = Math.round(data.map(v => v.score).reduce((result, element) => {
+          return result + element;
+        }, 0)/data.length * 100) / 100;
+      $scope.averageScore = updateScore
+
+      options.series[0].data = data.map(v => v.score);
+      options.series[0].name = data[0].name;
+      let chart = new Highcharts.Chart(options);
     });
   });
 
