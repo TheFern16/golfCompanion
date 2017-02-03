@@ -29,9 +29,11 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
     };
 
     $.getJSON('/api/golfer', (data) => {
+
       let updateScore = Math.round(data.map(v => v.score).reduce((result, element) => {
           return result + element;
         }, 0)/data.length * 100) / 100;
+
       $scope.averageScore = updateScore
 
       options.series[0].data = data.map(v => v.score);
