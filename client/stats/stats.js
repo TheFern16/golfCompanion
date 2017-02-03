@@ -29,4 +29,5 @@ angular.module('golfCompanion.stats', [])
         let chart = new Highcharts.Chart(options);
     });
   });
+
 });

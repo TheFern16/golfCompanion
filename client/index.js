@@ -16,4 +16,5 @@ angular.module('golfCompanion', [
       templateUrl: '/stats/stats.html',
       controller: 'StatsController'
     })
-});
+})
+
