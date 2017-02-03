@@ -51,6 +51,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
    $scope.piechart = $(document).ready(() => {
     let options = {
       chart: {
+        backgroundColor: '#FFFFD5',
         renderTo: 'container',
         type: 'column'
       },

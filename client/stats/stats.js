@@ -5,6 +5,7 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
   $scope.areaspline = $(document).ready(() => {
     let options = {
       chart: {
+        backgroundColor: '#FFFFD5',
         renderTo: 'container',
         type: 'areaspline'
       },
@@ -12,7 +13,6 @@ angular.module('golfCompanion.stats', ['golfCompanion.scores'])
         text: 'Snapshot: Your Scores'
       },
       yAxis: {
-        tickPixelInterval: 1,
         title: {
           text: 'Score'
         }
