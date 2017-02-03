@@ -34,6 +34,9 @@ const corsOptionsDelegate = (req, callback) => {
   callback(null, corsOptions);
 }
 
+app.get('/api/golfer', cors(corsOptionsDelegate), (req, res, next) => {
+  res.json({msg: 'CORS is enabled for the whitelist.'})
+})
 
 
 // serve up the routes
