@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var golferSchema = mongoose.Schema({
+var GolferSchema = new mongoose.Schema({
 
   name: {
     type: String,
@@ -17,6 +17,4 @@ var golferSchema = mongoose.Schema({
 
 });
 
-let GolferModel = mongoose.model('Golfer', golferSchema)
-
-module.exports = GolferModel;
+module.exports = GolferSchema;

@@ -17,20 +17,20 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       });
     };
 
-    $scope.getWeather = () => {
-      navigator.geolocation.getCurrentPosition((position) => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        let url = "https://www.amdoren.com/api/weather.php?api_key=K4yP7LzhASPgADmyPJkDkq3P6DAjLH&lat="+lat+"&lon="+lon+"";
-        let weatherData = $sce.trustAsResourceUrl(url)
+    // $scope.getWeather = () => {
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     let lat = position.coords.latitude;
+    //     let lon = position.coords.longitude;
+    //     let url = "https://www.amdoren.com/api/weather.php?api_key=K4yP7LzhASPgADmyPJkDkq3P6DAjLH&lat="+lat+"&lon="+lon+"";
+    //     let weatherData = $sce.trustAsResourceUrl(url)
 
-      $http.get(weatherData)
-        .then((data) => {
-          $scope.weatherData = data;
-          console.log(data);
-        });
-      });
-    };
+    //   $http.get(weatherData)
+    //     .then((data) => {
+    //       $scope.weatherData = data;
+    //       console.log(data);
+    //     });
+    //   });
+    // };
 
     $scope.postScore = (name, course, score) => {
       Scores.postScore(name, course, score).then((data) => {
@@ -82,7 +82,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     });
   });
 
-  $scope.getWeather();
+  // $scope.getWeather();
   $scope.getScores();
 
 });

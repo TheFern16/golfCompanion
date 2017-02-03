@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const golferRouter = require('./routes');
+const routes = require('./routes');
+const _ = require('lodash');
 
 const app = express();
 
@@ -27,7 +28,11 @@ app.use((req, res, next) => {
 
 // connect to the mongoose schema
 
-app.use('/api/golfer', golferRouter);
+app.models = require('./models/index');
+
+_.each(routes, (controller, route) => {
+  app.use(route, controller(app, route));
+});
 
 app.listen(3000, () => {
   console.log('3000... I am listening');
