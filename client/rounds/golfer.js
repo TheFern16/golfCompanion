@@ -6,6 +6,16 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     $scope.course = 'Rustic Canyon G.C.';
     $scope.location = '';
     $scope.mappedArray = [];
+    $scope.hardCoded = {
+      "error" : 0,
+      "error_message" : "-",
+      "forecast":[
+        {"date":"2016-11-04", "avg_c":17, "min_c":12, "max_c":22, "avg_f":63, "min_f":54, "max_f":72, "summary":"Light rain", "icon":"wi_color_drizzle.png"},
+        {"date":"2016-11-05", "avg_c":17, "min_c":15, "max_c":22, "avg_f":63, "min_f":59, "max_f":72, "summary":"Sunny", "icon":"wi_color_sunny.png"},
+        {"date":"2016-11-06", "avg_c":19, "min_c":13, "max_c":23, "avg_f":66, "min_f":55, "max_f":73, "summary":"Partly cloudy", "icon":"wi_color_partly_cloudy_day.png"},
+        {"date":"2016-11-07", "avg_c":19, "min_c":14, "max_c":21, "avg_f":66, "min_f":57, "max_f":70, "summary":"Moderate or heavy rain", "icon":"wi_color_rain.png"},
+        {"date":"2016-11-08", "avg_c":14, "min_c":8, "max_c":17, "avg_f":57, "min_f":46, "max_f":63, "summary":"Light rain", "icon":"wi_color_drizzle.png"}
+    ]};
 
     $scope.changeView = (view) => {
       $location.path(view)
