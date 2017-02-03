@@ -1,6 +1,19 @@
-// this will define all of the routes for the application
-// the routing types are defined as methods on GolferController
+const express = require('express');
+const golferController = require('./controllers/GolferController.js');
+const golferModel = require('./models/Golfer.js');
 
-module.exports = {
-  '/api/golfer': require('./controllers/GolferController')
-}
+const router = express.Router();
+
+router.route('/api/golfer')
+  .get(function(req, res) {
+    golferModel.find((err, scores) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(scores);
+      }
+  });
+});
+
+
+module.exports = router;

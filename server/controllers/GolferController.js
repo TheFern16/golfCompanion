@@ -1,14 +1,16 @@
-const restful = require('node-restful');
+const GolferModel = require('../models/Golfer.js');
 
-module.exports = (app, route) => {
 
-  let rest = restful.model('golfer', app.models.golfer)
-    .methods(['get', 'put', 'post', 'delete'])
+module.exports = {
 
-  rest.register(app, route);
-
-  return (req, res, next) => {
-    next();
-  };
+  findAll: function() {
+    GolferModel.find({}, (err, family) => {
+      if (err) {
+        return err;
+      } else {
+        return family
+      }
+    });
+  }
 
 };
