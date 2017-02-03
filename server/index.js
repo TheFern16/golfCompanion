@@ -2,9 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const characterRouter = require('./routes');
+const golferRouter = require('./routes');
 
 const app = express();
+
+mongoose.connect('mongodb://localhost/golfCompanion');
 
 // parsing into JSON
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,7 +15,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // serve the client the static client folder & routes
 app.use(express.static(__dirname + '/../client'));
-app.use('/api/golfer', characterRouter);
+
 
 // allow CORS
 app.use((req, res, next) => {
@@ -24,8 +26,8 @@ app.use((req, res, next) => {
 })
 
 // connect to the mongoose schema
-mongoose.connect('mongodb://localhost/golfCompanion');
 
+app.use('/api/golfer', golferRouter);
 
 app.listen(3000, () => {
   console.log('3000... I am listening');
