@@ -81,7 +81,7 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
     });
   });
 
-  // $scope.getWeather();
+  $scope.getWeather();
   $scope.getScores();
 
 });

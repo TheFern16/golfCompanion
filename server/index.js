@@ -3,12 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const routes = require('./routes');
-const cors = require('cors');
 const _ = require('lodash');
-const port = process.env.PORT || 3000;
 
+const port = process.env.PORT || 3000;
 const app = express();
-app.use(cors())
 
 mongoose.connect('mongodb://localhost/golfCompanion');
 
@@ -21,23 +19,19 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/../client'));
 
 
-// CORS support
-const whiteList = ['https://www.amdoren.com/api/time.php'];
-
-const corsOptionsDelegate = (req, callback) => {
-  let corsOptions;
-  if (whiteList.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = { origin: true }
+// CORS support which allows for options
+const allowCrossDomain = (req, res, next) => {
+  if ('OPTIONS' == req.method) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    res.send(200);
   } else {
-    corsOptions = { origin: false }
+    next();
   }
-  callback(null, corsOptions);
-}
+};
 
-app.get('/api/golfer', cors(corsOptionsDelegate), (req, res, next) => {
-  res.json({msg: 'CORS is enabled for the whitelist.'})
-})
-
+app.use(allowCrossDomain);
 
 // serve up the routes
 app.models = require('./models/index');
