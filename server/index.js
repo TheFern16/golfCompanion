@@ -15,6 +15,14 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 // serve the client the static client folder
 app.use(express.static(__dirname + '/../client'));
 
+// allow CORS
+app.use((req, res, next) => {
+  res.head('Access-Control-Allow-Origin', '*');
+  res.head('Access-Control-Allow-Headers', 'Origin', 'X-Requested-With', 'Content-Type', 'Accept');
+  next();
+})
+
+
 
 // connect to the mongoose schema
 mongoose.connect('mongodb://localhost/golfCompanion');

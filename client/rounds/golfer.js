@@ -21,9 +21,10 @@ angular.module('golfCompanion.scores', ['golfCompanion.services', 'underscore'])
       navigator.geolocation.getCurrentPosition((position) => {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
-        let weatherData = $sce.trustAsResourceUrl("https://www.amdoren.com/api/weather.php?api_key=K4yP7LzhASPgADmyPJkDkq3P6DAjLH&lat="+lat+"&lon="+lon+"")
+        let url = "https://www.amdoren.com/api/weather.php?api_key=K4yP7LzhASPgADmyPJkDkq3P6DAjLH&lat="+lat+"&lon="+lon+"";
+        let weatherData = $sce.trustAsResourceUrl(url)
 
-      $http.jsonp(weatherData)
+      $http.get(weatherData)
         .then((data) => {
           $scope.weatherData = data;
           console.log(data);
